@@ -1,0 +1,14 @@
+// /pages/tools.wxs
+
+var format = function (str) {
+  var playcount = parseInt(str)
+  if (playcount >= 100000) {
+    playcount = playcount / 10000
+    playcount = playcount.toFixed(1)
+    str = playcount + '万'
+  }
+  return str;
+}
+module.exports = {
+  format: format
+};

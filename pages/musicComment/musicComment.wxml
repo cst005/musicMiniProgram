@@ -1,0 +1,47 @@
+<view class="comment_wrap">
+    <view class="comment_select">
+      <view>评论区：</view>
+    </view>
+    <navigator url="#" class="comment_item" wx:for="{{hotComments}}" wx:key="id">
+      <view class="comment_user">
+        <!-- 用户头像 -->
+        <view class="comment_user_icon">
+          <view class="icon">
+            <image src="{{item.user.avatarUrl}}" mode="widthFix"></image>
+          </view>
+        </view>
+        <view class="user_wrap">
+          <view class="user_item">
+            <!-- 用户名和注册时间 -->
+            <view class="user">
+              <view class="comment_user_name">
+                {{item.user.nickname}}
+              </view>
+              <!-- <view class="register_date">
+                1
+              </view> -->
+            </view>
+            <!-- 点赞数 -->
+            <view class="likedCount">
+              <view class="count">
+                {{item.likedCount}}
+              </view>
+              <view class="likedCount_icon">
+                <image src="https://i.niupic.com/images/2021/09/11/9vaL.png" mode="widthFix"></image>
+              </view>
+            </view>
+          </view>
+          <!-- 评论内容 -->
+          <view class="content">
+            {{item.content}}
+          </view>
+        </view>
+      </view>
+    </navigator>
+  </view>
+  <navigator class="footer">
+    <view class="footer_title">
+    <view>到底了~</view> 
+    <view class="more"></view>
+    </view>
+  </navigator>

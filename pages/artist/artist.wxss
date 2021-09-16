@@ -1,0 +1,261 @@
+page {
+  background-color: #ffffff;
+}
+
+.bag {
+  position: relative;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 622rpx;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.artist_title {
+  background-color: rgba(119, 119, 119, .5);
+  position: absolute;
+  bottom: 110rpx;
+  left: 10rpx;
+  padding: 0 20rpx;
+  border-radius: 15rpx;
+  color: #ffffff;
+}
+
+.artist_title view {
+  margin: 20rpx 0;
+}
+
+.artistName {
+  font-size: 40rpx;
+  font-weight: 500;
+}
+
+.artist_rank {
+  font-weight: 500;
+  font-size: 26rpx;
+}
+
+.artistIntroduce {
+  padding: 0 20rpx;
+  padding-bottom: 20rpx;
+  border-bottom: 20rpx solid #fcfcfd;
+}
+
+.artistIntroduceTitle {
+  font-size: 36rpx;
+  color: #333333;
+  font-weight: 700;
+  padding: 20rpx 0;
+  margin-left: 30rpx;
+}
+
+.artistIntroduceItem {
+  font-size: 28rpx;
+  color: #666666;
+}
+
+.artistIntroduceItem {
+  display: -webkit-box;
+  overflow: hidden;
+  white-space: normal;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.hotSong {
+  padding: 0 20rpx;
+}
+
+.hotSong_title {
+  font-size: 36rpx;
+  color: #333333;
+  font-weight: 700;
+  padding: 20rpx 0;
+margin-left: 30rpx;
+}
+
+.hotSong_item {
+  display: flex;
+  align-items: center;
+}
+
+.num {
+  width: 80rpx;
+  height: 110rpx;
+  flex: 1;
+  text-align: center;
+  line-height: 110rpx;
+  font-size: 34rpx;
+  color: #999999;
+}
+
+
+
+.song {
+  flex: 9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 670rpx;
+  height: 110rpx;
+  flex: 8;
+  border-bottom: 4rpx solid #f0f0f1;
+  /* border-radius: 10rpx; */
+}
+
+.newSongs_wrap {
+  width: 100%;
+  padding: 0 20rpx;
+  margin-top: 20rpx;
+}
+
+.newSongs_item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10rpx;
+  padding: 12rpx 0;
+}
+
+.newSongs_item_title {
+  flex: 15;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: flex-start;
+
+}
+
+.newSongs_name {
+  color: #333333;
+  font-size: 34rpx;
+  padding-left: 10rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  white-space: normal;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.newSongs_name text {
+  color: #888888;
+
+}
+
+.newSongs_img {
+  flex: 1.5;
+  width: 44rpx;
+  height: 44rpx;
+  margin: 0 8rpx;
+  background: url(https://i.niupic.com/images/2021/09/09/9uQ4.png) no-repeat -48rpx 0;
+  background-size: 332rpx 194rpx;
+}
+
+.artist {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.artist_img_item {
+  padding-top: 7rpx;
+}
+
+.artist_img {
+  margin-top: 10rpx;
+  width: 28rpx;
+  height: 20rpx;
+  margin: 0 8rpx;
+  background: url(https://i.niupic.com/images/2021/09/09/9uQ4.png) no-repeat 0 0;
+  background-size: 332rpx 194rpx;
+}
+
+.artist_name {
+
+  font-size: 24rpx;
+  color: #888888;
+
+  display: -webkit-box;
+  overflow: hidden;
+  white-space: normal;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 110rpx;
+  border-bottom: 2rpx solid #f2f2f3;
+}
+
+.footer_title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 196rpx;
+  height: 110rpx;
+  font-size: 28rpx;
+  line-height: 110rpx;
+  color: #999999;
+}
+
+.more {
+
+  width: 16rpx;
+  height: 16rpx;
+  border-top: 3.5rpx solid #d2d2d2;
+  border-right: 3.5rpx solid #d2d2d2;
+  transform: rotate(45deg);
+}
+
+.influence {
+  padding: 30rpx 40rpx;
+  border-bottom: 2rpx solid #f2f2f3;
+  font-size: 28rpx;
+  color: #333333;
+}
+
+.influenceTitle {
+  display: flex;
+  align-items: center;
+  font-size: 36rpx;
+  color: #333333;
+  font-weight: 700;
+  padding: 20rpx 0;
+}
+
+.influenceTitle icon {
+  margin-top: 5rpx;
+}
+
+.influenceList {
+  display: flex;
+}
+
+.influenceList view image {
+  width: 32rpx;
+  height: 32rpx;
+}
+
+.ranking {
+  margin-left: 20rpx;
+  display: flex;
+  align-items: center;
+}
+
+.hot {
+  display: flex;
+  align-items: center;
+}

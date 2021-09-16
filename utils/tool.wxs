@@ -1,0 +1,11 @@
+var format = function (str) {
+  if(str!=null){
+    str="/"+str
+  }else{
+    str=""
+  }
+  return str;
+}
+module.exports = {
+  format: format
+};

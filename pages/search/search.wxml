@@ -1,0 +1,122 @@
+<view class="main">
+  <view class="header">
+    <view class="search_row">
+      <view class="search">
+        <icon type="search" class="icon_search" size="40rpx"></icon>
+      </view>
+      <view class="input">
+        <input type="text" data-first="{{inputValue}}" placeholder="搜索歌曲、歌手、专辑" bindconfirm="hotSearch" focus="true" bindinput="inputChange"
+          value="{{inputValue}}" maxlength="32" confirm-type="search" />
+      </view>
+      <view class="clear" bindtap="isClear">
+        <icon type="clear" size="40rpx" class="icon_clear" wx:if="{{isInput==true}}"></icon>
+      </view>
+    </view>
+  </view>
+  <view class="contain">
+    <view class="search_content">
+      <!-- 热门搜索 -->
+      <view class="hot_search_wrap" wx:if="{{hot_isShow}}">
+        <view class="hot_search_title">
+          热门搜索
+        </view>
+        <view class="hot_search_item">
+          <navigator url="#" data-first="{{item.first}}" bindtap="hotSearch" class="hot_search" wx:for="{{hots}}"
+            wx:key="i">
+            {{item.first}}
+          </navigator>
+        </view>
+      </view>
+      <!-- 获取搜索建议 -->
+      <view class="suggest_wrap" wx:if="{{suggest_isShow}}">
+        <view class="suggest_title">搜索"{{inputValue}}"</view>
+        <navigator data-first="{{item.keyword}}" class="match_wrap" wx:for="{{suggest}}" wx:key="i" bindtap="hotSearch">
+          <icon type="search" size="30rpx"></icon>
+          <text>{{item.keyword}}</text>
+        </navigator>
+      </view>
+      <view class="hotSearchList" wx:if="{{hotSearchList_isShow}}">
+        <view class="hotSearchList_title">最佳匹配</view>
+        <!-- 歌手 -->
+        <navigator url="../artist/artist?id={{hotMatchList.artist[0].id}}" class="bestMatch" wx:if="{{hotMatchList.artist[0]!=undefined}}">
+          <view class="bestMatch_img">
+            <image src="{{hotMatchList.artist[0].picUrl}}"></image>
+          </view>
+          <view class="bestMatch_title">
+            <view class="bestMatch_name">
+              {{hotMatchList.artist[0].occupation+':'+hotMatchList.artist[0].name}}
+              {{(hotMatchList.artist[0].alias!='')?'('+hotMatchList.artist[0].alias+')':''}}
+            </view>
+          </view>
+          <view class="bestMatch_icon">
+            <image src="https://i.niupic.com/images/2021/09/15/9Bn8.png"></image>
+          </view>
+        </navigator>
+        <!-- 专辑 -->
+        <navigator url="../album/album?playListId={{hotMatchList.album[0].id}}" class="bestMatch" wx:if="{{hotMatchList.album[0]!=undefined}}">
+          <view class="bestMatch_img">
+            <image src="{{hotMatchList.album[0].picUrl}}"></image>
+          </view>
+          <view class="bestMatch_title">
+            <view class="bestMatch_name">
+              {{'专辑:'+hotMatchList.album[0].name}}
+            </view>
+            <view class="bestMatch_artist">
+              {{hotMatchList.album[0].artist.name}}
+            </view>
+          </view>
+          <view class="bestMatch_icon">
+            <image src="https://i.niupic.com/images/2021/09/15/9Bn8.png"></image>
+          </view>
+        </navigator>
+        <!-- MV -->
+        <navigator url="../mvDetail/mvDetail?mvid={{hotMatchList.mv[0].id}}" class="bestMatch" wx:if="{{hotMatchList.mv[0]!=undefined}}">
+          <view class="bestMatch_img">
+            <image src="{{hotMatchList.mv[0].cover}}"></image>
+          </view>
+          <view class="bestMatch_title">
+            <view class="bestMatch_name">
+              {{'MV:'+hotMatchList.mv[0].name}}
+            </view>
+            <view class="bestMatch_artist">
+              {{hotMatchList.mv[0].artist.name}}
+            </view>
+          </view>
+          <view class="bestMatch_icon">
+            <image src="https://i.niupic.com/images/2021/09/15/9Bn8.png"></image>
+          </view>
+        </navigator>
+        <!-- 点击热门搜索得到的歌曲 -->
+        <view class="newSongs_wrap">
+          <navigator url="../../pages/musicDetail/musicDetail?id={{item.id}}" class="newSongs_item"
+            wx:for="{{hotSearchSongs}}" wx:key="id">
+            <view class="newSongs_item_title">
+              <view class="newSongs_name">
+                {{item.name}}
+              </view>
+              <view class="artist">
+                <view class="artist_img_item">
+                  <view class="artist_img">
+                  </view>
+                </view>
+                <view class="artist_name">
+                  {{item.artists[0].name+'-'+item.album.name}}
+                </view>
+              </view>
+            </view>
+            <view class="newSongs_img">
+            </view>
+          </navigator>
+          <navigator class="footer">
+            <view class="footer_title">
+              <view>到底了~</view>
+              <view class="more"></view>
+            </view>
+          </navigator>
+
+        </view>
+
+      </view>
+    </view>
+  </view>
+</view>

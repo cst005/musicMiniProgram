@@ -1,0 +1,91 @@
+<wxs src="../../utils/tool.wxs" module="tool" />
+<view class="main">
+  <view class="header">
+    <view class="bag" style="background-image: url({{artists.artist.picUrl}});">
+      <view class="artist_title">
+        <view class="artistName">
+          {{artists.artist.name}}
+        </view>
+        <view class="artist_rank" wx:for="{{artistList}}" wx:if="{{item.name==artist}}">
+          歌手榜华语地区No.{{index+1}}
+        </view>
+        <view class="fans_count"></view>
+      </view>
+    </view>
+
+
+    <view class="artistIntroduce">
+      <view class="artistIntroduceTitle">
+        歌手简介
+      </view>
+      <view class="artistIntroduceItem">
+        {{artists.artist.briefDesc}}
+      </view>
+    </view>
+    <view class="hotSong">
+      <view class="hotSong_title">
+        热门单曲
+      </view>
+      <view class="hotSongList">
+        <view class="hotSong_item" wx:for="{{artists.hotSongs}}" wx:key="id" wx:if="{{index<5}}">
+          <view class="num">
+            <text>{{index+1}}</text>
+          </view>
+          <navigator url="../../pages/musicDetail/musicDetail?id={{item.id}}" class="song">
+            <view class="newSongs_wrap">
+              <view class="newSongs_item">
+                <view class="newSongs_item_title">
+                  <view class="newSongs_name">
+                    {{item.name}}
+                    <text>{{item.alia}}</text>
+                  </view>
+                  <view class="artist">
+                    <view class="artist_img_item">
+                      <view class="artist_img">
+                      </view>
+                    </view>
+                    <view class="artist_name">
+                      {{item.ar[0].name+tool.format(item.ar[1].name)+'-'+item.al.name}}
+                    </view>
+                  </view>
+                </view>
+                <view class="newSongs_img">
+                </view>
+              </view>
+            </view>
+          </navigator>
+        </view>
+
+        <navigator class="footer">
+          <view class="footer_title">
+            <view>查看完整榜单</view>
+            <view class="more"></view>
+          </view>
+        </navigator>
+      </view>
+    </view>
+    <view class="influence">
+      <view class="influenceTitle">
+        <text> 影响力</text>
+        <icon type="warn" size="36rpx" color="#c9c9c9"></icon>
+      </view>
+      <view class="influenceList" wx:for="{{artistList}}" wx:if="{{item.name==artist}}">
+        <view class="hot">
+          <image src="https://i.niupic.com/images/2021/09/15/9Bxa.png"></image>
+          <text>歌手热度 {{item.score}} </text>
+        </view>
+        <view class="ranking">
+          <text >歌手榜华语地区 No.{{index+1}}</text>
+          <image src="https://i.niupic.com/images/2021/09/15/9Bn8.png"></image>
+        </view>
+      </view>
+    </view>
+    <navigator class="footer">
+    <view class="footer_title">
+    <view>到底了~</view> 
+    <view class="more"></view>
+    </view>
+  </navigator>
+
+  </view>
+</view>

@@ -1,0 +1,28 @@
+<view class="lyric_item">
+  <view class="lyric">
+    <scroll-view class="scroll" scroll-y>
+      <block wx:for="{{lyrics}}" >
+        {{item}}
+      </block>
+    </scroll-view>
+  </view>
+</view>
+<view class="slider_item">
+  <view class="playing">
+    <view class="playing_icon" bindtap="{{isPlaying?'audioPause':'audioPlay'}}">
+      <image src="{{isPlaying?pause_icon:play_icon}}"></image>
+    </view>
+  </view>
+  <view class="slider_wrap">
+    <view class="slider">
+      <slider class="slider-bar" block-size="1" value="{{myAudioPos}}" bindchange="slider_change" activeColor="#ffffff">
+      </slider>
+    </view>
+    <view class="slider_time">
+      <view class="current-time">{{audioCurrent}}</view>
+      <view class="duration-time">{{audioDuration}}</view>
+    </view>
+  </view>
+</view>
+
+<!-- <button type="primary" bindtap="{{isPlaying?'audioPause':'audioPlay'}}">{{isPlaying?'暂停':'播放'}}</button> -->

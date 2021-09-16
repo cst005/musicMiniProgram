@@ -1,0 +1,14 @@
+.header {
+  position: fixed;
+  width: 100%;
+  z-index: 8;
+}
+
+.nav {
+  padding-top: 80rpx;
+}
+.banner .wx-swiper-dot {
+  width: 18rpx;
+  height: 6rpx;
+  border-radius: 5rpx;
+}

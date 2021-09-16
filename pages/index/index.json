@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "mainHeader":"../../components/mainHeader/mainHeader",
+    "SearchInput":"../../components/SearchInput/SearchInput",
+    "Tabs":"../../components/Tabs/Tabs",
+    "RecommendMusic":"../../components/RecommendMusic/RecommendMusic",
+    "HotSongList":"../../components/HotSongList/HotSongList",
+    "RecommendMv":"../../components/RecommendMv/RecommendMv"
+
+  }
+}

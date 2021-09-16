@@ -1,0 +1,10 @@
+<!--components/mainHeader/mainHeader.wxml-->
+<view class="header">
+  <view class="logo">
+    <image src="https://i.niupic.com/images/2021/09/08/9uMQ.png" mode="widthFix" class="icon"></image>
+  </view>
+  <view class="title">网易云音乐</view>
+  <navigator class="downLoad">
+    下载APP
+  </navigator>
+</view>

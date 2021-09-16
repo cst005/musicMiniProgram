@@ -1,0 +1,71 @@
+<wxs src="../../utils/tools.wxs" module="tools" />
+<view class="main">
+  <view class="recommend_mv">
+    <view class="recommend_mv_title">
+      最新MV
+    </view>
+    <view class="recommend_mv_wrap">
+      <scroll-view scroll-x class="scroll">
+        <navigator url="/pages/mvDetail/mvDetail?mvid={{item.id}}" class="recommend_mv_item" wx:for="{{newMvList}}" wx:key="id" >
+          <view class="img">
+            <image src="{{item.cover}}" />
+            <view class="playCountWrap">
+              <view class="playCountImg">
+                <image src="https://i.niupic.com/images/2021/09/11/9v7g.png" mode="widthFix"></image>
+              </view>
+              <view class="playCount">
+                {{tools.format(item.playCount)}}
+              </view>
+            </view>
+          </view>
+          <view class="name">{{item.name}}</view>
+          <view class="author">{{item.artistName}}</view>
+        </navigator>
+      </scroll-view>
+    </view>
+  </view>
+  <view class="mvRankList">
+    <view class="mvRankList_title">
+      MV排行榜
+    </view>
+    <view class="mvRankList_contain">
+      <view class="updateDate">
+        <view class="date">
+          更新时间 ：{{currentMonth}}月{{currentDay}}日
+        </view>
+        <view class="updateDate_icon">
+          <icon type="warn" size="35rpx" color="#c9c9c9"></icon>
+        </view>
+      </view>
+      <view class="mvRankingList">
+        <navigator  url="/pages/mvDetail/mvDetail?mvid={{item.id}}" class="mvRankingList_item" wx:for="{{mvRankingList}}" wx:key="id">
+          <view class="item_img">
+            <image src="{{item.cover}}" mode="widthFix"></image>
+            <view class="mRList_playCountWrap">
+              <view class="mRList_playCountImg">
+                <image src="https://i.niupic.com/images/2021/09/11/9v7g.png" mode="widthFix"></image>
+              </view>
+              <view class="mRList_playCount">
+                {{tools.format(item.playCount)}}
+              </view>
+            </view>
+          </view>
+          <view class="title">
+            <view class="num">
+              <view class="index">{{index+1}}</view>
+            </view>
+            <view class="mv_data">
+              <view class="mv_name">
+                {{item.name}}
+              </view>
+              <view class="mv_artist_name">
+                {{item.artistName}}
+              </view>
+            </view>
+          </view>
+        </navigator>
+      </view>
+
+    </view>
+  </view>
+</view>

@@ -1,0 +1,107 @@
+<wxs src="../../utils/tools.wxs" module="tools" />
+<wxs src="../../utils/likeCountTool.wxs" module="likeCountTool" />
+<view class="main">
+  <view class="header">
+    <view class="bag" style="background-image: url({{playList.album.blurPicUrl}});"></view>
+    <view class="header_wrap">
+      <view class="cover">
+        <image src="{{playList.album.blurPicUrl}}" class="cover_img"></image>
+        <view class="type">专辑</view>
+      </view>
+      <view class="header_title">
+        <view class="header_name">
+          {{playList.album.name}}
+        </view>
+        <view class="creator">
+          <view class="creator_name">
+            歌手：<text>{{playList.album.artists[0].name}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="introduction">
+  <view class="introduction_title">简介：{{playList.album.description}}</view> 
+  </view>
+  <view class="play_list">
+    <view class="play_list_title">歌曲列表</view>
+    <view class="hotSong_item" wx:for="{{playList.songs}}" wx:key="id" wx:if="{{index<20}}">
+      <view class="num">
+        <text>{{index+1}}</text>
+      </view>
+      <navigator url="../../pages/musicDetail/musicDetail?id={{item.id}}" class="song">
+        <view class="newSongs_wrap">
+          <view class="newSongs_item">
+            <view class="newSongs_item_title">
+              <view class="newSongs_name">
+                {{item.name+item.alia}}
+              </view>
+              <view class="artist">
+                <view class="artist_img_item">
+                  <view class="artist_img">
+                  </view>
+                </view>
+                <view class="artist_name">
+                  {{item.ar[0].name+tool.format(item.ar[1].name)+'-'+item.al.name}}
+                </view>
+              </view>
+            </view>
+            <view class="newSongs_img">
+            </view>
+          </view>
+        </view>
+      </navigator>
+    </view>
+    <view class="hint">
+      查看更多歌曲，请下载客户端
+    </view>
+  </view>
+  <view class="comment_select">
+    <view class="comment_area">评论区：</view>
+  </view>
+  <view class="comment_wrap">
+
+    <navigator url="#" class="comment_item" wx:for="{{commentList}}" wx:key="id">
+      <view class="comment_user">
+        <!-- 用户头像 -->
+        <view class="comment_user_icon">
+          <view class="icon">
+            <image src="{{item.user.avatarUrl}}" mode="widthFix"></image>
+          </view>
+        </view>
+        <view class="user_wrap">
+          <view class="user_item">
+            <!-- 用户名和注册时间 -->
+            <view class="user">
+              <view class="comment_user_name">
+                {{item.user.nickname}}
+              </view>
+              <!-- <view class="register_date">
+                1
+              </view> -->
+            </view>
+            <!-- 点赞数 -->
+            <view class="likedCount">
+              <view class="count">
+                {{likeCountTool.format(item.likedCount)}}
+              </view>
+              <view class="likedCount_icon">
+                <image src="https://i.niupic.com/images/2021/09/11/9vaL.png" mode="widthFix"></image>
+              </view>
+            </view>
+          </view>
+          <!-- 评论内容 -->
+          <view class="content">
+            {{item.content}}
+          </view>
+        </view>
+      </view>
+    </navigator>
+  </view>
+  <navigator class="footer">
+    <view class="footer_title">
+      <view>到底了~</view>
+      <view class="more"></view>
+    </view>
+  </navigator>
+</view>

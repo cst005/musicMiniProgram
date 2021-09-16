@@ -1,0 +1,46 @@
+<wxs src="../../utils/tool.wxs" module="tool" />
+<view class="header">
+  <view class="top">
+    <view class="top_icon"></view>
+    <view class="top_time">
+      更新日期：{{currentMonth}}月{{currentDay}}日
+    </view>
+  </view>
+</view>
+
+<view class="hotSongList">
+  <view class="hotSong_item" wx:for="{{HotSongList}}" wx:key="id" wx:if="{{index<20}}">
+    <view class="num">
+      <text>{{index+1}}</text>
+    </view>
+    <navigator url="../../pages/musicDetail/musicDetail?id={{item.id}}"  class="song">
+      <view class="newSongs_wrap">
+        <view class="newSongs_item">
+          <view class="newSongs_item_title">
+            <view class="newSongs_name">
+              {{item.name}}
+            </view>
+            <view class="artist">
+              <view class="artist_img_item">
+                <view class="artist_img">
+                </view>
+              </view>
+              <view class="artist_name">
+                {{item.ar[0].name+tool.format(item.ar[1].name)+'-'+item.al.name}}
+              </view>
+            </view>
+          </view>
+          <view class="newSongs_img">
+          </view>
+        </view>
+      </view>
+    </navigator>
+  </view>
+
+  <navigator class="footer">
+    <view class="footer_title">
+    <view>查看完整榜单</view> 
+    <view class="more"></view>
+    </view>
+  </navigator>
+</view>

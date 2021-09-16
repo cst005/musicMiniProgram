@@ -1,0 +1,9 @@
+var format = function (str) {
+  if(str=="0"){
+    str=""
+  }
+  return str;
+}
+module.exports = {
+  format: format
+};

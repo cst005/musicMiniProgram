@@ -1,0 +1,47 @@
+.lyric_item{
+  width: 100%;
+  height: 600rpx;
+  background-color: skyblue;
+}
+.slider_item{
+  width: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 0 20rpx;
+   background-color: rgba(255, 192, 203, .8);
+}
+.current-time{
+  font-size: 28rpx;
+  color: #ffffff;
+}
+.slider_wrap{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.slider{
+ width: 100%;
+}
+.slider_time{
+  width: 100%;
+  display: flex;
+  padding: 0 30rpx;
+  justify-content: space-between;
+}
+.duration-time{
+  font-size: 28rpx;
+  color: #ffffff;
+}
+
+.playing_icon {
+  text-align: center;
+}
+.playing_icon image{
+width: 100rpx;
+height: 100rpx;
+}
+.scroll{
+  width: 100%;
+  height: 600rpx;
+}

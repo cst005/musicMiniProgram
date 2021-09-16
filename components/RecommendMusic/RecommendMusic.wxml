@@ -1,0 +1,80 @@
+<!--components/RecommendMusic/RecommendMusic.wxml-->
+<wxs src="../../utils/tools.wxs" module="tools" />
+<view class="swiperCont">
+
+  <swiper class="swiper" easing-function="easeInOutCubic" indicator-dots="true" indicator-active-color="#ffffff"
+    interval="3000" duration="500" indicator-color="rgba(255, 255, 255, .3)" autoplay circular>
+    <navigator url="{{'../../pages/musicDetail/musicDetail?id='+item.targetId}}" wx:for="{{bannerList}}" wx:key="bannerId"
+      wx:if="{{item.typeTitle=='新歌首发' }}">
+      <swiper-item>
+        <view class="swiper-item">
+          <image src="{{item.pic}}"></image>
+        </view>
+      </swiper-item>
+    </navigator>
+  </swiper>
+
+</view>
+<view class="editorRecommend">
+  <view class="title">
+    编辑推荐
+  </view>
+  <view class="songList_wrap">
+    <navigator url="../../pages/playList/playList?playListId={{item.id}}" class="songList_item" wx:for="{{songList}}"
+      wx:key="id">
+      <view class="songList_img">
+        <image src="{{item.picUrl}}" mode="widthFix"></image>
+        <view class="play_count_wrap">
+          <view class="play_count_img">
+            <image src="https://i.niupic.com/images/2021/09/09/9uS3.png" mode="widthFix"></image>
+          </view>
+          <view class="play_count">
+            {{tools.format(item.playCount)}}
+          </view>
+        </view>
+      </view>
+      <view class="songList_title">
+        {{item.name}}
+      </view>
+    </navigator>
+  </view>
+</view>
+
+<view class="newSongs">
+  <view class="newSongs_title">
+    最新音乐
+  </view>
+  <view class="newSongs_wrap">
+    <navigator url="../../pages/musicDetail/musicDetail?id={{item.id}}" class="newSongs_item" wx:for="{{newSongList}}"
+      wx:key="id">
+      <view class="newSongs_item_title">
+        <view class="newSongs_name">
+          {{item.name}}
+        </view>
+        <view class="artist">
+          <view class="artist_img_item">
+            <view class="artist_img">
+            </view>
+          </view>
+          <view class="artist_name">
+            {{item.song.artists[0].name+'-'+item.song.album.name}}
+          </view>
+        </view>
+      </view>
+      <view class="newSongs_img">
+      </view>
+    </navigator>
+  </view>
+</view>
+
+<navigator class="footer">
+  <view class="footer_img">
+    <image src="https://i.niupic.com/images/2021/09/09/9uRG.png" mode="widthFix"></image>
+  </view>
+  <view class="openapp">
+    打开APP，发现更多好音乐
+  </view>
+  <view class="copyright">
+    <text>网易公司版权所有©1997-2021杭州乐读科技有限公司运营</text>
+  </view>
+</navigator>

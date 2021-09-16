@@ -1,0 +1,223 @@
+.main {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+}
+
+.bag {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: blur(70rpx);
+  -webkit-filter: blur(70rpx);
+  -webkit-transform: scale(1.5);
+  transform: scale(1.5);
+}
+
+.back {
+  width: 80rpx;
+  text-align: center;
+  border-radius: 20rpx;
+  background-color: rgba(255, 250, 250, .1);
+  margin-left: 20rpx;
+}
+
+.back image {
+  width: 50rpx;
+  height: 50rpx;
+  margin-top: 5rpx;
+}
+
+.song_title {
+  width: 40%;
+  text-align: center;
+  margin-left: 30%;
+}
+
+
+.song_name {
+  font-size: 34rpx;
+  color: #ffffff;
+  display: -webkit-box;
+  overflow: hidden;
+  white-space: normal;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.song_artist {
+  font-size: 24rpx;
+  color: #999999;
+}
+
+.audio {
+  position: absolute;
+  bottom: 90rpx;
+  width: 100%;
+  text-align: center;
+}
+
+.record {
+  position: absolute;
+  width: 100%;
+  margin-top: 30rpx;
+}
+
+.player_con {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.play_bar {
+  width: 26%;
+  position: absolute;
+  left: 350rpx;
+  top: -10px;
+  z-index: 10;
+  transform: rotate(-25deg);
+  transform-origin: 12px 12px;
+  transition: 1s;
+}
+
+/* 播放杆 转回去 */
+.player_con.playing .play_bar {
+  transform: rotate(0);
+}
+
+.disc {
+  width: 65%;
+  position: absolute;
+  /* left: 95px; */
+  top: 60px;
+  z-index: 9;
+  border-radius: 50%;
+  border: 3rpx solid rgba(250, 250, 250, .3);
+}
+
+/* 旋转的动画 */
+@keyframes Rotate {
+  from {
+    transform: rotateZ(0);
+  }
+
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+
+/* 旋转的类名 */
+.autoRotate {
+  animation-name: Rotate;
+  animation-iteration-count: infinite;
+  animation-play-state: paused;
+  animation-timing-function: linear;
+  animation-duration: 5s;
+}
+
+.cover {
+  position: absolute;
+  left: 225rpx;
+  top: 210rpx;
+  width: 320rpx;
+  height: 320rpx;
+  /* border-radius: 75px; */
+  z-index: 8;
+}
+
+/* 是否正在播放 */
+.player_con.playing .disc,
+.player_con.playing .cover {
+  animation-play-state: running;
+}
+
+.slider_item {
+  position: absolute;
+  bottom: 160rpx;
+  width: 95%;
+  margin: 0 20rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20rpx 20rpx;
+  border-radius: 20rpx;
+  /* margin: 0 20rpx; */
+  background-color: rgba(255, 250, 250, .1);
+}
+
+.current-time {
+  font-size: 28rpx;
+  color: #ffffff;
+}
+
+.slider_wrap {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.slider {
+  width: 100%;
+}
+
+.slider_time {
+  width: 100%;
+  display: flex;
+  padding: 0 30rpx;
+  justify-content: space-between;
+}
+
+.duration-time {
+  font-size: 28rpx;
+  color: #ffffff;
+}
+
+.playing_icon {
+  text-align: center;
+  /* margin-top: 26rpx; */
+}
+
+.playing_icon image {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.comment_wrap {
+  position: absolute;
+  bottom: 320rpx;
+  right: 20rpx;
+  border-radius: 30rpx;
+
+}
+
+.comment_item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30rpx;
+  padding: 5rpx 10rpx;
+  background-color: rgba(255, 250, 250, .1);
+}
+
+.comment_title {
+  font-size: 24rpx;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 10rpx;
+  margin-left: 5rpx;
+}
+
+.comment_icon image {
+  width: 38rpx;
+  height: 38rpx;
+}

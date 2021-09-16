@@ -1,0 +1,153 @@
+.top {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 292rpx;
+  margin-top: 5rpx;
+  background: url(https://i.niupic.com/images/2021/09/09/9uWZ.jpg) no-repeat;
+  background-size: contain;
+}
+
+.top_icon {
+  width: 284rpx;
+  height: 134rpx;
+  margin-left: 50rpx;
+  background: url(https://i.niupic.com/images/2021/09/09/9uQ4.png) no-repeat;
+  background-size: 332rpx 194rpx;
+  background-position: -48rpx -60rpx;
+}
+
+.top_time {
+  margin-top: 20rpx;
+  margin-left: 50rpx;
+  color: #ffffff;
+  font-size: 24rpx;
+}
+
+.hotSong_item {
+  display: flex;
+  align-items: center;
+}
+
+.num {
+  width: 80rpx;
+  height: 110rpx;
+  flex: 1;
+  text-align: center;
+  line-height: 110rpx;
+  font-size: 34rpx;
+  color: #999999;
+}
+
+.hotSong_item:nth-child(-n+3) .num {
+  color: #df3436;
+}
+
+.song {
+  flex: 9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 670rpx;
+  height: 110rpx;
+  flex: 8;
+  border-bottom: 4rpx solid #f0f0f1;
+  border-radius: 10rpx;
+}
+
+.newSongs_wrap {
+  width: 100%;
+  padding: 0 20rpx;
+  margin-top: 20rpx;
+}
+
+.newSongs_item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10rpx;
+  padding: 12rpx 0;
+}
+
+.newSongs_item_title {
+  flex: 15;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.newSongs_name {
+  color: #333333;
+  font-size: 34rpx;
+  padding-left: 10rpx;
+}
+
+.newSongs_img {
+  flex: 1.5;
+  width: 44rpx;
+  height: 44rpx;
+  margin: 0 8rpx;
+  background: url(https://i.niupic.com/images/2021/09/09/9uQ4.png) no-repeat -48rpx 0;
+  background-size: 332rpx 194rpx;
+}
+
+.artist {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.artist_img_item {
+  padding-top: 7rpx;
+}
+
+.artist_img {
+  margin-top: 10rpx;
+  width: 28rpx;
+  height: 20rpx;
+  margin: 0 8rpx;
+  background: url(https://i.niupic.com/images/2021/09/09/9uQ4.png) no-repeat 0 0;
+  background-size: 332rpx 194rpx;
+}
+
+.artist_name {
+
+  font-size: 24rpx;
+  color: #888888;
+
+  display: -webkit-box;
+  overflow: hidden;
+  white-space: normal;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 110rpx;
+}
+.footer_title{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 196rpx;
+  height: 110rpx;
+  font-size: 28rpx;
+  line-height: 110rpx;
+  color: #999999; 
+}
+.more{
+
+  width: 16rpx;
+  height: 16rpx;
+  border-top: 3.5rpx solid #d2d2d2;
+  border-right: 3.5rpx solid #d2d2d2;
+  transform: rotate(45deg);
+}
