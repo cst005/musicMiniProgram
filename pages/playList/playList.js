@@ -13,10 +13,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let playListId=options.playListId
+    let playListId = options.playListId
+    console.log(playListId)
     // 获取歌单内容
     wx.request({
-      url: 'http://iwenwiki.com:3000/playlist/detail?id='+playListId,
+      url: 'http://iwenwiki.com:3000/playlist/detail?id=' + playListId,
       success: (result) => {
         this.setData({
           playList: result.data.playlist
@@ -25,7 +26,7 @@ Page({
     })
     // 获取歌单评论
     wx.request({
-      url: 'http://iwenwiki.com:3000/comment/playlist?id='+playListId,
+      url: 'http://iwenwiki.com:3000/comment/playlist?id=' + playListId,
       success: (result) => {
         this.setData({
           commentList: result.data.comments

@@ -1,5 +1,6 @@
 <wxs src="../../utils/tools.wxs" module="tools" />
 <wxs src="../../utils/likeCountTool.wxs" module="likeCountTool" />
+<wxs src="../../utils/timestampToDate.wxs" module="timestampToDate" />
 <view class="main">
   <view class="header">
     <view class="bag" style="background-image: url({{playList.album.blurPicUrl}});"></view>
@@ -21,7 +22,7 @@
     </view>
   </view>
   <view class="introduction">
-  <view class="introduction_title">简介：{{playList.album.description}}</view> 
+    <view class="introduction_title">简介：{{playList.album.description}}</view>
   </view>
   <view class="play_list">
     <view class="play_list_title">歌曲列表</view>
@@ -76,9 +77,9 @@
               <view class="comment_user_name">
                 {{item.user.nickname}}
               </view>
-              <!-- <view class="register_date">
-                1
-              </view> -->
+              <view class="register_date">
+                {{timestampToDate.timestampToDate('yyyy年MM月DD日 ',item.time) }}
+              </view>
             </view>
             <!-- 点赞数 -->
             <view class="likedCount">
