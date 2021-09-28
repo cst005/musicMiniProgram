@@ -1,54 +1,53 @@
-<view class="main" >
+<view class="main">
   <view class="bag" style="background-image: url({{newSongDetail.al.picUrl}});">
   </view>
   <navigator class="back" bindtap="back" style="position: absolute;top: {{capsuleTop*2}}rpx;">
     <image src="https://i.niupic.com/images/2021/09/14/9ANn.png"></image>
   </navigator>
-<view class="song_title" style="margin-top: {{capsuleTop*2}}rpx;">
-  <view class="song_name">
-    {{newSongDetail.name}}
-  </view>
-  <view class="song_artist">
-    {{newSongDetail.ar[0].name}}
-  </view>
-</view>
-<!-- 碟片 -->
-<view class="record">
-  <view class="player_con {{isPlaying?'playing':''}}">
-    <image src="https://i.niupic.com/images/2021/09/13/9ywn.png" mode="widthFix" class="play_bar" />
-    <image src="https://i.niupic.com/images/2021/09/13/9ywg.png" mode="widthFix" class="disc autoRotate" />
-    <image src="{{newSongDetail.al.picUrl}}" class="cover autoRotate" />
-  </view>
-</view>
-<navigator url="../musicComment/musicComment?id={{newSongDetail.id}}" class="comment_wrap">
-  <view class="comment_item">
-    <view class="comment_icon">
-      <image src="https://i.niupic.com/images/2021/09/13/9zny.png"></image>
+  <view class="song_title" style="margin-top: {{capsuleTop*2}}rpx;">
+    <view class="song_name">
+      {{newSongDetail.name}}
     </view>
-    <view class="comment_title">
-      评论
+    <view class="song_artist">
+      {{newSongDetail.ar[0].name}}
     </view>
   </view>
-</navigator>
+  <!-- 碟片 -->
+  <view class="record">
+    <view class="player_con {{isPlaying?'playing':''}}">
+      <image src="https://i.niupic.com/images/2021/09/13/9ywn.png" mode="widthFix" class="play_bar" />
+      <image src="https://i.niupic.com/images/2021/09/13/9ywg.png" mode="widthFix" class="disc autoRotate" />
+      <image src="{{newSongDetail.al.picUrl}}" class="cover autoRotate" />
+    </view>
+  </view>
+  <navigator url="../musicComment/musicComment?id={{newSongDetail.id}}" class="comment_wrap">
+    <view class="comment_item">
+      <view class="comment_icon">
+        <image src="https://i.niupic.com/images/2021/09/13/9zny.png"></image>
+      </view>
+      <view class="comment_title">
+        评论
+      </view>
+    </view>
+  </navigator>
 
-<view class="slider_item">
-  <view class="playing">
-    <view class="playing_icon" bindtap="{{isPlaying?'audioPause':'audioPlay'}}">
-      <image src="{{isPlaying?pause_icon:play_icon}}"></image>
+  <view class="slider_item">
+    <view class="playing">
+      <view class="playing_icon" bindtap="{{isPlaying?'audioPause':'audioPlay'}}">
+        <image src="{{isPlaying?pause_icon:play_icon}}"></image>
+      </view>
     </view>
-  </view>
 
-  <view class="slider_wrap">
-    <view class="slider">
-      <slider class="slider-bar" block-size="1" value="{{myAudioPos}}" bindchange="slider_change" activeColor="#ffffff"
-        backgroundColor="rgba(229, 229, 229,.5)">
-      </slider>
-    </view>
-    <view class="slider_time">
-      <view class="current-time">{{audioCurrent}}</view>
-      <view class="duration-time">{{audioDuration}}</view>
+    <view class="slider_wrap">
+      <view class="slider">
+        <slider class="slider-bar" block-size="1" value="{{myAudioPos}}" bindchange="slider_change" activeColor="#ffffff" backgroundColor="rgba(229, 229, 229,.5)">
+        </slider>
+      </view>
+      <view class="slider_time">
+        <view class="current-time">{{audioCurrent}}</view>
+        <view class="duration-time">{{audioDuration}}</view>
+      </view>
     </view>
   </view>
-</view>
 
 </view>

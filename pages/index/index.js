@@ -25,8 +25,8 @@ Page({
     HotSongList: [],
     currentMonth: "",
     currentDay: "",
-    newMvList:[],
-    mvRankingList:[]
+    newMvList: [],
+    mvRankingList: []
   },
   handleItemChange(e) {
 
@@ -86,7 +86,7 @@ Page({
     const date = new Date();
 
     this.setData({
-      currentMonth: date.getMonth()+1,
+      currentMonth: date.getMonth() + 1,
       currentDay: date.getDate(),
     })
     // 最新mv
@@ -98,8 +98,8 @@ Page({
         })
       }
     })
-     // MV排行榜
-     wx.request({
+    // MV排行榜
+    wx.request({
       url: 'http://iwenwiki.com:3000/top/mv?limit=20',
       success: (result) => {
         this.setData({

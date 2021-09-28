@@ -6,6 +6,7 @@
 }
 
 .bag {
+  z-index: -2;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -19,6 +20,17 @@
   -webkit-filter: blur(70rpx);
   -webkit-transform: scale(1.5);
   transform: scale(1.5);
+}
+
+.bag::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, .3);
 }
 
 .back {
@@ -57,6 +69,7 @@
 .song_artist {
   font-size: 24rpx;
   color: #999999;
+  filter: brightness(60%);
 }
 
 .audio {
@@ -143,7 +156,7 @@
 
 .slider_item {
   position: absolute;
-  bottom: 160rpx;
+  bottom: 12%;
   width: 95%;
   margin: 0 20rpx;
   display: flex;
@@ -194,7 +207,7 @@
 
 .comment_wrap {
   position: absolute;
-  bottom: 320rpx;
+  bottom: 24%;
   right: 20rpx;
   border-radius: 30rpx;
 

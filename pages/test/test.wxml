@@ -1,7 +1,7 @@
 <view class="lyric_item">
   <view class="lyric">
     <scroll-view class="scroll" scroll-y>
-      <block wx:for="{{lyrics}}" >
+      <block wx:for="{{lyrics}}">
         {{item}}
       </block>
     </scroll-view>

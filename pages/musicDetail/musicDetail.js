@@ -102,12 +102,10 @@ Page({
     let dwObj = wx.getMenuButtonBoundingClientRect()
     let navHeight_ = (dwObj.top + dwObj.height)
     let capsuleTop_ = dwObj.top
-    this.setData(
-    {
-    navHeight: navHeight_,
-    capsuleTop:capsuleTop_
-    }
-    )
+    this.setData({
+      navHeight: navHeight_,
+      capsuleTop: capsuleTop_
+    })
   },
 
   /**

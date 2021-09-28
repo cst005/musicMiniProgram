@@ -6,8 +6,7 @@
   <view class="nav">
     <Tabs tabs="{{tabs}}" binditemChange="handleItemChange">
       <block wx:if="{{tabs[0].isActive}}">
-        <RecommendMusic bannerList="{{background}}" songList="{{songList}}" newSongList="{{newSongList}}"
-          class="banner"></RecommendMusic>
+        <RecommendMusic bannerList="{{background}}" songList="{{songList}}" newSongList="{{newSongList}}" class="banner"></RecommendMusic>
       </block>
       <block wx:elif="{{tabs[1].isActive}}">
         <HotSongList HotSongList="{{HotSongList}}" currentMonth="{{currentMonth}}" currentDay="{{currentDay}}">
